@@ -1,1 +1,1 @@
-# Qubic equation solver
+# SDM_Lab_1
