@@ -2,7 +2,7 @@ import math
 
 
 class QuadraticEquationSolver:
-    def __init__(self, a: int, b: int, c: int) -> None:
+    def __init__(self, a: float, b: float, c: float) -> None:
         self._result = dict()
 
         self._a = a
