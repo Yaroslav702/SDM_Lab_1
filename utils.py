@@ -12,6 +12,9 @@ class QuadraticEquationSolver:
     def get_result(self) -> dict:
         return self._result
 
+    def set_prefix(self) -> None:
+        print(f"Equation is: ({self._a}) x^2 + ({self._b}) x + ({self._c}) = 0")
+
     def resolve(self) -> None:
         discriminator = self._b**2 - 4*self._a*self._c
 

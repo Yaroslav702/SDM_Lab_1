@@ -1,4 +1,6 @@
 import sys
+import os
+import re
 from utils import QuadraticEquationSolver
 
 
@@ -29,13 +31,35 @@ def resolve_interactive() -> None:
     solver = QuadraticEquationSolver(a, b, c)
     solver.resolve()
 
+    solver.set_prefix()
     output_result(solver.get_result())
+
+
+def resolve_file_mode(file_path: str) -> None:
+    if not os.path.exists(file_path):
+        raise Exception(f"file {file_path} does not exist")
+
+    with open(file_path, 'r') as file:
+        content = file.read().strip()
+        if not re.fullmatch(r"-?\d+\.\d*\s-?\d+\.\d*\s-?\d+\.\d*", content):
+            raise ValueError("Invalid file format")
+
+        a, b, c = map(float, content.split())
+
+        if a == 0:
+            raise Exception("Error: 'a' cannot be zero.")
+
+        solver = QuadraticEquationSolver(a, b, c)
+        solver.resolve()
+
+        solver.set_prefix()
+        output_result(solver.get_result())
 
 
 def main() -> None:
     match len(sys.argv):
-        case 2:  # un-interactive method
-            pass
+        case 2:  # non-interactive method
+            resolve_file_mode(sys.argv[1])
         case 1:  # interactive method
             resolve_interactive()
         case _:
