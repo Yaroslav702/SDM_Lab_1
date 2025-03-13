@@ -16,9 +16,9 @@
 1) Клонувати репозиторій <br>
 `% git clone https://github.com/Yaroslav702/SDM_Lab_1.git equation_solver` <br>
 `% cd equation_solver`
-2) Запустити програму в інтерактивному режимі:
+2) Запустити програму в інтерактивному режимі: <br>
 `% python3 equation.py`
-3) Запустити програму в неінтерактивному режимі:
+3) Запустити програму в неінтерактивному режимі: <br>
 `% python3 equation.py <шлях_до_файлу>`
 
 ---
@@ -31,3 +31,7 @@
 `1.0 5.0 6.0`
 
 ⚠️ Файл має закінчуватися символом нового рядка (\n).
+
+---
+
+[Revert commit link](https://github.com/Yaroslav702/SDM_Lab_1/commit/16a58d12484ca1f2b4ce11053a89e4c2e67b8adb)
